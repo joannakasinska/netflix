@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function remSize($value, $unit: 'px', $context: 16) {
+    @if $unit == 'em' {
+        @return #{math.div($value * $context, $context)}rem;
+    } @else {
+        @return #{math.div($value, $context)}rem;
+    }
+}

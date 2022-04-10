@@ -1,0 +1,25 @@
+{
+  "printWidth": 160,
+  "tabWidth": 4,
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "importOrder": [
+    "lib",
+    "api",
+    "utils",
+    "context",
+    "providers",
+    "container",
+    "pages",
+    "components",
+    "assets",
+    "^[./]",
+    "^[./](.*types)",
+    "^[./](.*scss)"
+
+  ]
+}

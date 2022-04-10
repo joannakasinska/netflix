@@ -1,0 +1,71 @@
+@use "sass:list";
+@use '../config/breakpoints.module.scss' as breakpoints;
+
+$breakpointsMap: breakpoints.$breakpoints;
+
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpointsMap, $breakpoint) {
+        $breakpoint-value: list.nth(map-get($breakpointsMap, $breakpoint), 2) + 1px;
+
+        @media only screen and (min-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-above-equal($breakpoint) {
+    @if map-has-key($breakpointsMap, $breakpoint) {
+        $breakpoint-value: list.nth(map-get($breakpointsMap, $breakpoint), 1);
+
+        @media only screen and (min-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpointsMap, $breakpoint) {
+        $breakpoint-value: list.nth(map-get($breakpointsMap, $breakpoint), 1) - 1px;
+
+        @media only screen and (max-width: ($breakpoint-value)) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-below-equal($breakpoint) {
+    @if map-has-key($breakpointsMap, $breakpoint) {
+        $breakpoint-value: list.nth(map-get($breakpointsMap, $breakpoint), 2);
+
+        @media only screen and (max-width: ($breakpoint-value)) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-between($lower, $upper) {
+    @if map-has-key($breakpointsMap, $lower) and map-has-key($breakpointsMap, $upper) {
+        $lower-breakpoint: map-get($breakpointsMap, $lower);
+        $upper-breakpoint: map-get($breakpointsMap, $upper);
+
+        @media only screen and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+            @content;
+        }
+    } @else {
+        @if (map-has-key($breakpointsMap, $lower) == false) {
+            @warn 'Lower breakpoint: #{$lower} is invalid.';
+        }
+
+        @if (map-has-key($breakpointsMap, $upper) == false) {
+            @warn 'Upper breakpoint: #{$upper} is invalid.';
+        }
+    }
+}
