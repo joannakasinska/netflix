@@ -4,15 +4,15 @@ import { useEffect } from 'react';
 import { ROUTES } from '../routes';
 
 const Index: NextPage = () => {
-  const router = useRouter();
+    const router = useRouter();
 
-  useEffect(() => {
-      router.push({
-        pathname: ROUTES.START,
-      });
-  }, [router]);
+    useEffect(() => {
+        router.push({
+            pathname: ROUTES.START,
+        });
+    }, [router]);
 
-  return null;
-}
+    return null;
+};
 
 export default Index;

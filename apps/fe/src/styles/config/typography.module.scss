@@ -1,5 +1,5 @@
-@use "../../styles/tools/rem.module" as rem;
-@use "../../styles/tools/media.module" as media;
+@use '../../styles/tools/rem.module' as rem;
+@use '../../styles/tools/media.module' as media;
 
 @import '~rfs/scss';
 
@@ -12,7 +12,7 @@ $font-sizes: (
     'h4': 28,
     'h3': 32,
     'h2': 36,
-    'h1': 40
+    'h1': 40,
 );
 
 $default-font-weight: 400;

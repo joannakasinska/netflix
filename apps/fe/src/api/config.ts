@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 export const API_URL = publicRuntimeConfig.BFF_HOST;
 
 const instance: AxiosInstance = axios.create({
-  baseURL: API_URL,
+    baseURL: API_URL,
 });
 
 instance.interceptors.request.use(requestInterceptor);

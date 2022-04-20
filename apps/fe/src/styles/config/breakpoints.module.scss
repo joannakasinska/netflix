@@ -1,0 +1,28 @@
+@use 'sass:list';
+
+$small: 768px;
+$medium: 1280px;
+$large: 1440px;
+
+$breakpointsList: (
+        sm: $small,
+        md: $medium,
+        lg: $large,
+);
+
+$breakpoints: (
+        'small': [null,
+    $small],
+        'medium': [$small + 1px,
+    $medium],
+        'large': [$medium + 1px,
+    $large],
+        'xlarge': [$large + 1px,
+    null],
+);
+
+:export {
+  small: list.nth(map-get($breakpoints, 'small'), 2);
+  medium: list.nth(map-get($breakpoints, 'medium'), 2);
+  large: list.nth(map-get($breakpoints, 'large'), 2);
+}

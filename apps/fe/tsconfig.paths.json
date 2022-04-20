@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
-            "@codeek-netflix/bff-service": ["../../bff/src/index.ts"],
+            "@codeek-netflix/bff-service": ["../../bff/src/index.ts"]
         }
     }
 }

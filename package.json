@@ -12,11 +12,6 @@
   },
   "author": "Joanna Kasińska",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:report . && git add -A ."
-    }
-  },
   "cacheDirectories": [
     "node_modules"
   ],
@@ -35,7 +30,11 @@
     "heroku-postbuild": "npm run install-client && npm run install-server"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.4.0",
+    "prettier": "^2.6.2"
   },
   "dependencies": {
     "@types/jest": "^27.4.1",
@@ -43,5 +42,8 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "typescript": "^4.6.3"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }

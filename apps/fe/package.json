@@ -1,37 +1,50 @@
 {
-    "name": "fe-service",
-    "version": "0.1.0",
-    "private": true,
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ],
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "axios": "^0.26.1",
-        "next": "12.1.0",
-        "react": "17.0.2",
-        "react-app-polyfill": "^3.0.0",
-        "react-dom": "17.0.2"
-    },
-    "devDependencies": {
-        "@types/node": "17.0.22",
-        "@types/react": "17.0.41",
-        "babel-loader": "^8.2.4",
-        "babel-plugin-module-resolver": "^4.1.0",
-        "classnames": "^2.3.1",
-        "eslint": "8.11.0",
-        "eslint-config-next": "12.1.0",
-        "rfs": "^9.0.6",
-        "sass": "^1.50.0",
-        "sass-loader": "^12.6.0",
-        "typescript": "4.6.2"
-    }
+  "name": "fe-service",
+  "version": "0.1.0",
+  "private": true,
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:report": "tsc --noEmit && eslint \"src/**/*.{js,jsx,ts,tsx}\" && prettier \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\" --check",
+    "lint:fix": "tsc --noEmit && eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix && prettier \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\" --write"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "lint-staged": "^12.4.0",
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "17.0.2",
+    "typescript": "4.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.22",
+    "@types/react": "17.0.41",
+    "babel-loader": "^8.2.4",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "classnames": "^2.3.1",
+    "eslint": "^8.11.0",
+    "eslint-config-next": "^12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-storybook": "^0.5.11",
+    "prettier": "^2.6.2",
+    "rfs": "^9.0.6",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0"
+  }
 }

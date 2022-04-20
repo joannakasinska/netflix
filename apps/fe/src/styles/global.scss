@@ -1,0 +1,8 @@
+@use './config/colors.module.scss' as colors;
+
+$body-font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body {
+    font-family: $body-font-family;
+    background-color: colors.$white;
+}

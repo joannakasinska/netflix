@@ -6,20 +6,19 @@
   "arrowParens": "avoid",
   "jsxSingleQuote": false,
   "bracketSpacing": true,
-  "trailingComma": "none",
+  "trailingComma": "all",
+  "importOrderSortSpecifiers": true,
   "importOrder": [
-    "lib",
     "api",
     "utils",
+    "assets",
     "context",
     "providers",
     "container",
     "pages",
     "components",
-    "assets",
     "^[./]",
     "^[./](.*types)",
     "^[./](.*scss)"
-
   ]
 }

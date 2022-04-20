@@ -4,25 +4,21 @@ import React from 'react';
 import { getStartPage } from '../api/requests';
 
 export interface StartPageProps {
-  data?: StartDto;
+    data?: StartDto;
 }
 
 export const Start: NextPage<StartPageProps> = ({ data }) => {
-  return (
-    <div>
-      Start page
-    </div>
-  );
+    return <div>Start page</div>;
 };
 
 export default Start;
 
-export const getServerSideProps = async() => {
-  const data = await getStartPage();
+export const getServerSideProps = async () => {
+    const data = await getStartPage();
 
-  return {
-    props: {
-      data
-    },
-  };
+    return {
+        props: {
+            data,
+        },
+    };
 };

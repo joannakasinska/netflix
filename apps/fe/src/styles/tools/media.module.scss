@@ -1,4 +1,4 @@
-@use "sass:list";
+@use 'sass:list';
 @use '../config/breakpoints.module.scss' as breakpoints;
 
 $breakpointsMap: breakpoints.$breakpoints;
