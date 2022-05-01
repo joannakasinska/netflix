@@ -1,8 +1,10 @@
-@use './config/colors.module.scss' as colors;
+@use './core/normalize';
+@use './config/colors';
 
 $body-font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$p-line-height: 1.8;
 
 body {
-    font-family: $body-font-family;
-    background-color: colors.$white;
+  font-family: $body-font-family;
+  background-color: colors.$baby_powder;
 }

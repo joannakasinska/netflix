@@ -1,5 +1,6 @@
 import { StartDto } from '@codeek-netflix/bff-service';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import React from 'react';
 import { getStartPage } from '../api/requests';
 
@@ -8,7 +9,14 @@ export interface StartPageProps {
 }
 
 export const Start: NextPage<StartPageProps> = ({ data }) => {
-    return <div>Start page</div>;
+    return (
+        <>
+            <Head>
+                <title>Strona główna – Netflix</title>
+            </Head>
+            <div>Start page</div>
+        </>
+    );
 };
 
 export default Start;

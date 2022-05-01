@@ -1,0 +1,68 @@
+@use '../../styles/tools/rem';
+@use '../../styles/tools/media';
+
+@import '~rfs/scss';
+
+$font-sizes: (
+        'h100': 11,
+        'h200': 13,
+        'h300': 14,
+        'h400': 16,
+        'h500': 17,
+        'h600': 18,
+        'h700': 23,
+        'h800': 24,
+        'h900': 27,
+        'h1000': 32,
+        'h1100': 40,
+);
+
+$default-font-weight: 300;
+
+@function getFontSize($type) {
+  @return map-get($font-sizes, $type);
+}
+
+@mixin h100 {
+  font-size: rem.remSize(getFontSize('h100'));
+}
+
+@mixin h200 {
+  font-size: rem.remSize(getFontSize('h200'));
+}
+
+@mixin h300 {
+  font-size: rem.remSize(getFontSize('h300'));
+}
+
+@mixin h400 {
+  font-size: rem.remSize(getFontSize('h400'));
+}
+
+@mixin h500 {
+  font-size: rem.remSize(getFontSize('h500'));
+}
+
+@mixin h600 {
+  font-size: rem.remSize(getFontSize('h600'));
+}
+
+@mixin h700 {
+  font-size: rem.remSize(getFontSize('h700'));
+}
+
+@mixin h800 {
+  font-size: rem.remSize(getFontSize('h800'));
+}
+
+@mixin h900 {
+  font-size: rem.remSize(getFontSize('h900'));
+}
+
+@mixin h1000 {
+  font-size: rem.remSize(getFontSize('h1000'));
+}
+
+@mixin h1100 {
+  font-size: rem.remSize(getFontSize('h1100'));
+}
