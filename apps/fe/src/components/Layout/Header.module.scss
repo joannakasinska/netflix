@@ -1,0 +1,90 @@
+@use '../../styles/tools/rem';
+@use '../../styles/tools/size';
+@use '../../styles/tools/media';
+@use '../../styles/tools/z-index';
+@use '../../styles/config/colors';
+@use '../../styles/mixins/lists';
+
+$tabletMobileSpacing: 4%;
+$desktopSpacing: size.size(60);
+
+
+.container {
+  @include z-index.z(header);
+
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  height: size.size(68);
+  justify-content: space-between;
+  background: colors.$eerie_black;
+
+  @include media.respond-below-equal(small) {
+    height: size.size(41);
+  }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+}
+
+.logoWrapper {
+  min-width: 15%;
+  position: relative;
+  height: size.size(25);
+  margin-right: size.size(18);
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  height: size.size(25);
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+
+.part {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  color: colors.$white;
+}
+
+.left {
+  composes: part;
+  padding-left: $desktopSpacing;
+  justify-content: flex-start;
+
+  @include media.respond-below(large) {
+    padding-left: $tabletMobileSpacing;
+  }
+}
+
+.right {
+  composes: part;
+  @include lists.reset-list();
+  padding-right: $desktopSpacing;
+  justify-content: flex-end;
+
+  @include media.respond-below(large) {
+    padding-right: $tabletMobileSpacing;
+  }
+
+  & > li {
+    margin-right: size.size(12);
+  }
+}
+
+.kidsLink {
+  @include media.respond-below(medium) {
+    display: none;
+  }
+}
+
+//.right[aria-expanded] {
+//  //margin-right: 0;
+//}

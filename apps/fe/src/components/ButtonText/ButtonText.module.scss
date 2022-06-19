@@ -1,0 +1,64 @@
+@use '../../styles/tools/rem';
+@use '../../styles/config/colors';
+@use '../../styles/config/typography';
+@use '../../styles/config/accessibility';
+@use '../../styles/mixins/buttons';
+
+.button {
+  @include buttons.button-reset();
+
+  cursor: pointer;
+  vertical-align: baseline;
+  border-bottom: solid rem.remSize(1) transparent;
+
+  @include accessibility.focus;
+}
+
+.button[aria-disabled='true'] {
+  pointer-events: none;
+}
+
+.large {
+  composes: button;
+  @include typography.h500;
+
+  & .leftIcon {
+    padding-right: rem.remSize(16);
+  }
+
+  & .rightIcon {
+    padding-left: rem.remSize(16);
+  }
+}
+
+.medium {
+  composes: button;
+  @include typography.h400;
+
+  & .leftIcon {
+    margin-right: rem.remSize(12);
+  }
+
+  & .rightIcon {
+    margin-left: rem.remSize(12);
+  }
+}
+
+.small {
+  composes: button;
+  @include typography.h300;
+
+  & .leftIcon {
+    padding-right: rem.remSize(8);
+  }
+
+  & .rightIcon {
+    padding-left: rem.remSize(8);
+  }
+}
+
+.inherit {
+  composes: button;
+  color: currentColor;
+  font-weight: inherit;
+}

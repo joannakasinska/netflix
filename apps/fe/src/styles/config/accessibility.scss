@@ -1,0 +1,25 @@
+@use '../../styles/tools/rem';
+@use '../../styles/config/colors';
+
+$focus-ring-width: 2;
+$focus-ring-color: colors.$baby_powder;
+$focus-ring-offset: 2;
+$focus-ring-unit: rem;
+
+@mixin focus {
+  //&:focus {
+  //  outline: rem.remSize($focus-ring-width, $focus-ring-unit) solid $focus-ring-color;
+  //  outline-offset: rem.remSize($focus-ring-offset, $focus-ring-unit);
+  //}
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  left: -9999px;
+}

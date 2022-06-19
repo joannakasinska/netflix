@@ -1,23 +1,20 @@
 @use 'sass:list';
-
-$small: 768px;
-$medium: 1280px;
-$large: 1440px;
+@use '../config/settings';
 
 $breakpointsList: (
-        sm: $small,
-        md: $medium,
-        lg: $large,
+        sm: settings.$smallBreakpoint,
+        md: settings.$mediumBreakpoint,
+        lg: settings.$largeBreakpoint,
 );
 
 $breakpoints: (
         'small': [null,
-    $small],
-        'medium': [$small + 1px,
-    $medium],
-        'large': [$medium + 1px,
-    $large],
-        'xlarge': [$large + 1px,
+    settings.$smallBreakpoint],
+        'medium': [settings.$smallBreakpoint + 1px,
+    settings.$mediumBreakpoint],
+        'large': [settings.$mediumBreakpoint + 1px,
+    settings.$largeBreakpoint],
+        'xlarge': [settings.$largeBreakpoint + 1px,
     null],
 );
 

@@ -1,0 +1,48 @@
+@use 'sass:math';
+@use '../config/settings';
+
+$font-size-base: 16 !default;
+/// defines globally used unit
+$global-unit: settings.$global-unit !default;
+/// defines globally used relative unit
+$rel-unit: settings.$rel-unit !default;
+
+/// recalculates size to different unit
+/// @param {Number} $size - initial size to recalculate
+/// @param {Variable | String} $unit [$rel-unit] - unit to use recalculate
+/// @param {Number} $base [$font-body-size] - base body font size
+/// @see $global-unit
+@function _size-helper($size, $unit: $global-unit, $base: $font-size-base) {
+  @if $size == 'auto' {
+    @return $size;
+  }
+
+  // if size is defined without unit, recalculate it
+  @if unitless($size) {
+    @if $unit == em {
+      @return (math.div($size, $base) * 1em);
+    } @else if $unit == rem {
+      @return (math.div($size, $base) * 1rem);
+    } @else if $unit == perc {
+      @return (math.div($size, $base) * 1%);
+    } @else {
+      @return ($size * 1px);
+    }
+    // if size is defined with unit,
+  } @else {
+    @return $size;
+  }
+}
+
+@function size($sizes: 0 0 0 0, $unit: $global-unit, $base: $font-size-base) {
+  $values: null;
+
+  @if length($sizes) == 1 {
+    @return _size-helper($sizes, $unit, $base);
+  } @else {
+    @for $i from 1 through length($sizes) {
+      $values: $values _size-helper(nth($sizes, $i), $unit, $base);
+    }
+    @return $values;
+  }
+}

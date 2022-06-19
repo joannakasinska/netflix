@@ -1,0 +1,21 @@
+@use '../../styles/tools/rem';
+
+.avatar {
+  overflow: hidden;
+  border-radius: rem.remSize(4);
+}
+
+.large {
+  height: rem.remSize(192);
+  width: rem.remSize(192);
+}
+
+.medium {
+  height: rem.remSize(60);
+  width: rem.remSize(60);
+}
+
+.small {
+  height: rem.remSize(32);
+  width: rem.remSize(32);
+}

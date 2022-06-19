@@ -1,0 +1,5 @@
+@import '../../styles/config/accessibility';
+
+.a11y {
+  @include visually-hidden;
+}

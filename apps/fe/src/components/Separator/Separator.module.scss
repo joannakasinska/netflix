@@ -1,0 +1,11 @@
+@use '../../styles/tools/size';
+@use '../../styles/tools/media';
+@use '../../styles/config/colors';
+@use '../../styles/config/settings';
+
+.separator {
+  border: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: size.size(1);
+}

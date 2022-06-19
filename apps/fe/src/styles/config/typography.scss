@@ -1,9 +1,9 @@
 @use '../../styles/tools/rem';
+@use '../../styles/tools/size';
 @use '../../styles/tools/media';
 
-@import '~rfs/scss';
-
 $font-sizes: (
+        'h50': 10,
         'h100': 11,
         'h200': 13,
         'h300': 14,
@@ -15,6 +15,10 @@ $font-sizes: (
         'h900': 27,
         'h1000': 32,
         'h1100': 40,
+        'bodyLarge': 16,
+        'bodyMedium': 14,
+        'bodySmall': 12,
+        'bodyExtraSmall': 10,
 );
 
 $default-font-weight: 300;
@@ -23,46 +27,71 @@ $default-font-weight: 300;
   @return map-get($font-sizes, $type);
 }
 
+@mixin h50 {
+  font-size: size.size(getFontSize('h50'));
+}
+
 @mixin h100 {
-  font-size: rem.remSize(getFontSize('h100'));
+  font-size: size.size(getFontSize('h100'));
 }
 
 @mixin h200 {
-  font-size: rem.remSize(getFontSize('h200'));
+  font-size: size.size(getFontSize('h200'));
 }
 
 @mixin h300 {
-  font-size: rem.remSize(getFontSize('h300'));
+  font-size: size.size(getFontSize('h300'));
 }
 
 @mixin h400 {
-  font-size: rem.remSize(getFontSize('h400'));
+  font-size: size.size(getFontSize('h400'));
 }
 
 @mixin h500 {
-  font-size: rem.remSize(getFontSize('h500'));
+  font-size: size.size(getFontSize('h500'));
 }
 
 @mixin h600 {
-  font-size: rem.remSize(getFontSize('h600'));
+  font-size: size.size(getFontSize('h600'));
 }
 
 @mixin h700 {
-  font-size: rem.remSize(getFontSize('h700'));
+  font-size: size.size(getFontSize('h700'));
 }
 
 @mixin h800 {
-  font-size: rem.remSize(getFontSize('h800'));
+  font-size: size.size(getFontSize('h800'));
 }
 
 @mixin h900 {
-  font-size: rem.remSize(getFontSize('h900'));
+  font-size: size.size(getFontSize('h900'));
 }
 
 @mixin h1000 {
-  font-size: rem.remSize(getFontSize('h1000'));
+  font-size: size.size(getFontSize('h1000'));
 }
 
 @mixin h1100 {
-  font-size: rem.remSize(getFontSize('h1100'));
+  font-size: size.size(getFontSize('h1100'));
+}
+
+@mixin bodyLarge {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: size.size(getFontSize('bodyLarge'));
+  letter-spacing: size.size(0.2);
+}
+
+@mixin bodyMedium {
+  font-weight: 400;
+  line-height: 1.43;
+  font-size: size.size(getFontSize('bodyMedium'));
+  letter-spacing: size.size(0.2);
+}
+
+@mixin bodySmall {
+  font-weight: 400;
+  line-height: 1.33;
+  font-size: size.size(getFontSize('bodySmall'));
+  letter-spacing: size.size(0.2);
 }

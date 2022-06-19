@@ -1,0 +1,38 @@
+@use '../../../styles/mixins/links';
+@use '../../../styles/mixins/lists';
+@use '../../../styles/tools/size';
+@use '../../../styles/tools/rem';
+@use '../../../styles/tools/media';
+@use '../../../styles/config/colors';
+@use '../../../styles/config/settings';
+@use '../../../styles/config/typography';
+
+.listContainer {
+  @include lists.reset-list();
+
+  display: flex;
+  gap: size.size(20);
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  @include links.reset-link();
+  @include typography.h300();
+
+  height: 100%;
+  color: colors.$platinum;
+  transition: color settings.$transition-normal;
+  margin-right: size.size(4);
+  -webkit-font-smoothing: antialiased;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+
+  @include media.respond-below(large) {
+    @include typography.h50();
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+}

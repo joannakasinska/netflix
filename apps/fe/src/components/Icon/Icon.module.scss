@@ -1,0 +1,48 @@
+@use '../../styles/tools/rem';
+
+$icon-xs: 12;
+$icon-s: 16;
+$icon-m: 20;
+$icon-l: 24;
+
+@mixin icon-size($size) {
+  svg {
+    display: block;
+    width: rem.remSize($size);
+    height: rem.remSize($size);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+}
+
+.fit {
+  composes: icon;
+  color: inherit;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.xsmall {
+  @include icon-size($icon-xs);
+}
+
+.small {
+  @include icon-size($icon-s);
+}
+
+.medium {
+  @include icon-size($icon-m);
+}
+
+.large {
+  @include icon-size($icon-l);
+}

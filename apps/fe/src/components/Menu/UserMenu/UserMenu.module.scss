@@ -1,0 +1,119 @@
+@use '../../../styles/tools/rem';
+@use '../../../styles/tools/size';
+@use '../../../styles/tools/media';
+@use '../../../styles/mixins/lists';
+@use '../../../styles/mixins/links';
+@use '../../../styles/config/colors';
+@use '../../../styles/config/settings';
+@use '../../../styles/config/accessibility';
+@use '../../../styles/config/typography';
+
+.trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include accessibility.focus();
+}
+
+.triggerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.triggerCaret {
+  display: none;
+  @include media.respond-above-equal(medium) {
+    display: block;
+    margin-left: size.size(8);
+    transform: rotate(0);
+    transition: transform settings.$transition-fast;
+
+    svg {
+      fill: colors.$white;
+    }
+  }
+}
+
+.triggerCaretOpen {
+  transform: rotate(180deg);
+}
+
+.contentCaret {
+  color: colors.$white;
+  top: size.size(37, px);
+  right: size.size(26, px);
+  width: size.size(20, px);
+  position: absolute;
+
+  @include media.respond-below-equal(small) {
+    right: size.size(5, px);
+  }
+}
+
+.content {
+  position: absolute;
+  width: size.size(180, px);
+  top: size.size(52, px);
+  right: 0;
+  background: colors.$eerie_black;
+}
+
+.menu {
+  visibility: hidden;
+}
+
+.menuOpen {
+  visibility: visible;
+}
+
+.list {
+  @include lists.reset-list();
+  display: flex;
+  flex-direction: column;
+  padding: size.size(10) 0;
+}
+
+.listItem {
+  cursor: pointer;
+  align-items: center;
+  display: inline-flex;
+  color: colors.$platinum;
+  transition: color .4s;
+  -webkit-font-smoothing: antialiased;
+  padding: size.size(5) size.size(10);
+
+  &.centered {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+.listItemLink {
+  @include links.reset-link();
+  @include typography.h200();
+  display: flex;
+  align-items: center;
+}
+
+.listItemLabel {
+  @include links.reset-link();
+  @include typography.h200();
+  margin-left: size.size(10);
+}
+
+.separator {
+  background: currentColor;
+  margin-top: size.size(5);
+}
+
+.userMenu[aria-expanded="true"] {
+  fill: colors.$white;
+  transform: translateY(0);
+}

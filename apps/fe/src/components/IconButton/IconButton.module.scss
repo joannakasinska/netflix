@@ -1,0 +1,46 @@
+@use '../../styles/config/colors';
+@use '../../styles/config/settings';
+@use '../../styles/config/accessibility';
+@use '../../styles/tools/rem';
+@use '../../styles/mixins/buttons';
+
+$border-width: 1;
+
+.iconButton {
+  @include buttons.button-reset();
+
+  border-style: solid;
+  border-width: rem.remSize($border-width);
+  cursor: pointer;
+
+  @include accessibility.focus();
+}
+
+.large {
+  width: rem.remSize(48);
+  height: rem.remSize(48);
+}
+
+.medium {
+  width: rem.remSize(40);
+  height: rem.remSize(40);
+}
+
+.small {
+  width: rem.remSize(32);
+  height: rem.remSize(32);
+}
+
+.simple {
+  composes: iconButton;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+.simpleFit {
+  composes: simple;
+  width: 100%;
+  height: 100%;
+}

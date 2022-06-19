@@ -1,0 +1,86 @@
+//@use '../../styles/global';
+@use '../../styles/config/typography';
+
+.text {
+  //font-family: global.$body-font-family;
+  //line-height: global.$p-line-height;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.inherit {
+  composes: text;
+}
+
+.h1100 {
+  composes: text;
+  @include typography.h1100;
+}
+
+.h1000 {
+  composes: text;
+  @include typography.h1000;
+}
+
+.h900 {
+  composes: text;
+  @include typography.h900;
+}
+
+.h800 {
+  composes: text;
+  @include typography.h800;
+}
+
+.h700 {
+  composes: text;
+  @include typography.h700;
+}
+
+.h600 {
+  composes: text;
+  @include typography.h600;
+}
+
+.h500 {
+  composes: text;
+  @include typography.h500;
+}
+
+.h400 {
+  composes: text;
+  @include typography.h400;
+}
+
+.h300 {
+  composes: text;
+  @include typography.h300;
+}
+
+.h200 {
+  composes: text;
+  @include typography.h200;
+}
+
+.h100 {
+  composes: text;
+  @include typography.h100;
+}
+
+.inherit {
+  color: inherit;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
